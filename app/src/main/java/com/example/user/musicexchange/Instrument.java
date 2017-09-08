@@ -20,4 +20,20 @@ public abstract class Instrument implements Playable{
     }
 
     abstract public String play();
+
+    public Enum<InstrumentStyle> getType() {
+        return type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCostPrice() {
+        return costPrice;
+    }
+
+    public int getSalePrice() {
+        return salePrice;
+    }
 }

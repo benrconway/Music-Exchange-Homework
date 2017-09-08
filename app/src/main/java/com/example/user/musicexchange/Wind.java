@@ -11,10 +11,12 @@ public class Wind extends Instrument implements Playable {
     int salePrice;
 
     public Wind(Enum<InstrumentStyle> type, String name, int costPrice, int salePrice){
-        super(type, name, costPrice, salePrice)
+        super(type, name, costPrice, salePrice);
     }
 
     public String play() {
         return "Tweet Toot Tweet";
     }
+
+
 }

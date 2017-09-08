@@ -1,7 +1,7 @@
 package com.example.user.musicexchange;
 
-import org.junit.Before;
-import org.junit.Test;
+import static junit.framework.Assert.*;
+import org.junit.*;
 
 /**
  * Created by user on 08/09/2017.
@@ -15,5 +15,23 @@ public class WindTest {
     }
 
     @Test
-    public void canGetType
+    public void canGetType(){
+        assertEquals(InstrumentStyle.WIND, wind.getType());
+    }
+
+    @Test
+    public void canGetName(){
+        assertEquals("Ocarina", wind.getName());
+    }
+
+    @Test
+    public void canGetCostPrice(){
+        assertEquals(10, wind.getCostPrice());
+    }
+
+    @Test
+    public void canGetSalePrice(){
+        assertEquals(25, wind.getSalePrice());
+    }
+
 }
