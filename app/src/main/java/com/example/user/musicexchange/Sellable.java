@@ -6,4 +6,6 @@ package com.example.user.musicexchange;
 
 public interface Sellable {
     int calculateMarkUp();
+
+    String getName();
 }

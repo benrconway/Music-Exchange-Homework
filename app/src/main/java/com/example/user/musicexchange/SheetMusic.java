@@ -13,6 +13,10 @@ public class SheetMusic implements Sellable {
         this.salePrice = salePrice;
     }
 
+    public String getName(){
+        return null;
+    }
+
     public int getCostPrice() {
         return costPrice;
     }

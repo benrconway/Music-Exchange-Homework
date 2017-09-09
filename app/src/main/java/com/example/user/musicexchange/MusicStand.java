@@ -27,4 +27,9 @@ public class MusicStand implements Sellable{
         int markUp = sale - cost;
         return markUp;
     }
+
+    @Override
+    public String getName() {
+        return null;
+    }
 }

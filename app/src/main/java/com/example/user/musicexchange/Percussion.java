@@ -22,8 +22,6 @@ public class Percussion extends Instrument {
         int cost = this.getCostPrice();
         int sale = this.getSalePrice();
         int markUp = sale - cost;
-        System.out.println(sale);
-        System.out.println(sale - cost);
         return markUp;
     }
 
