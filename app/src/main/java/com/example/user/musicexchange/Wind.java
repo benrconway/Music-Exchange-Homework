@@ -18,5 +18,10 @@ public class Wind extends Instrument implements Playable {
         return "Tweet Toot Tweet";
     }
 
-
+    public int calculateMarkUp() {
+        int cost = this.getCostPrice();
+        int sale = this.getSalePrice();
+        int markUp = sale - cost;
+        return markUp;
+    }
 }

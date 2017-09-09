@@ -40,4 +40,9 @@ public class PercussionTest {
         assertEquals("Boom Boom Bam!", stompBox.play());
     }
 
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(15, stompBox.calculateMarkUp());
+    }
+
 }

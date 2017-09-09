@@ -6,7 +6,7 @@ import java.util.*;
  * Created by user on 08/09/2017.
  */
 
-public abstract class Instrument implements Playable{
+public abstract class Instrument implements Playable, Sellable{
     Enum<InstrumentStyle> type;
     String name;
     int costPrice;
@@ -20,6 +20,8 @@ public abstract class Instrument implements Playable{
     }
 
     abstract public String play();
+
+    abstract public int calculateMarkUp();
 
     public Enum<InstrumentStyle> getType() {
         return type;

@@ -39,4 +39,9 @@ public class WindTest {
         assertEquals("Tweet Toot Tweet", wind.play());
     }
 
+    @Test
+    public void canCalculateMarkUp() {
+        assertEquals(15, wind.calculateMarkUp());
+    }
+
 }
