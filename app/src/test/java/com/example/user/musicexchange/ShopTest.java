@@ -40,15 +40,15 @@ public class ShopTest {
 
     @Test
     public void canAddStockToShop(){
-        shop.addToStock(ocarina);
+        shop.buyIntoStock(ocarina);
         assertEquals(1, shop.getStock().size());
         assertEquals(ocarina, shop.getStock().get(0));
     }
 
     @Test
     public void canRemoveStockFromShop(){
-        shop.addToStock(ocarina);
-        shop.addToStock(stompBox);
+        shop.buyIntoStock(ocarina);
+        shop.buyIntoStock(stompBox);
         shop.removeFromStock(ocarina);
         assertEquals(1, shop.getStock().size());
         assertEquals("BigFoot", shop.getStock().get(0).getName());
@@ -56,18 +56,40 @@ public class ShopTest {
 
     @Test
     public void canCalculatePotentialProfit(){
-        shop.addToStock(ocarina);
-        shop.addToStock(stompBox);
-        shop.addToStock(mozart);
-        shop.addToStock(stand);
+        shop.buyIntoStock(ocarina);
+        shop.buyIntoStock(stompBox);
+        shop.buyIntoStock(mozart);
+        shop.buyIntoStock(stand);
         assertEquals(179, shop.calculateProfit());
     }
 
     @Test
     public void addingtoStockReducesAccountBalance(){
-        shop.addToStock(ocarina);
+        shop.buyIntoStock(ocarina);
         assertEquals(1470, shop.accountBalance());
     }
+
+
+    @Test
+    public void canCheckStockFail(){
+        shop.buyIntoStock(stand);
+        assertFalse(shop.checkStock(ocarina));
+    }
+
+    @Test
+    public void canCheckStockPass(){
+        shop.buyIntoStock(stand);
+        assertTrue(shop.checkStock(stand));
+    }
+
+    @Test
+    public void sellingStockIncreasesAccountBalance(){
+        shop.buyIntoStock(ocarina);
+        shop.sellItem(ocarina);
+        assertEquals(1620, shop.accountBalance());
+        assertEquals(0, shop.getStock().size());
+    }
+
 
 
 }

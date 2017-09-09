@@ -7,5 +7,9 @@ package com.example.user.musicexchange;
 public interface Sellable {
     int calculateMarkUp();
 
+    int getCostPrice();
+
+    int getSalePrice();
+
     String getName();
 }

@@ -28,7 +28,6 @@ public class MusicStand implements Sellable{
         return markUp;
     }
 
-    @Override
     public String getName() {
         return null;
     }

@@ -19,13 +19,17 @@ class Shop {
     public int accountBalance() {
         return account;
     }
+
     public ArrayList<Sellable> getStock() {
         ArrayList<Sellable> currentStock = this.stock;
         return currentStock;
     }
 
-    public void addToStock(Sellable item) {
-        stock.add(item);
+    public void buyIntoStock(Sellable item) {
+        if (account >= item.getCostPrice()) {
+            account -= item.getCostPrice();
+            stock.add(item);
+        }
     }
 
     public void removeFromStock(Sellable item) {
@@ -47,4 +51,22 @@ class Shop {
 
     }
 
+    public boolean checkStock(Sellable item){
+        for (Sellable itemInStock: this.stock){
+            if (itemInStock == item){
+                return true;
+                }
+        }
+        return false;
+    }
+
+    public Sellable sellItem(Sellable item) {
+        Sellable itemSold = null;
+        if (checkStock(item)== true){
+            account += item.getSalePrice();
+            itemSold = item;
+            removeFromStock(item);
+        }
+        return itemSold;
+    }
 }
