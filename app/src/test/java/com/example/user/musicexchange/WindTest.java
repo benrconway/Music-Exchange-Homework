@@ -34,4 +34,9 @@ public class WindTest {
         assertEquals(25, wind.getSalePrice());
     }
 
+    @Test
+    public void canPlay(){
+        assertEquals("Tweet Toot Tweet", wind.play());
+    }
+
 }
