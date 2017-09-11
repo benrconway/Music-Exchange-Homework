@@ -1,5 +1,4 @@
 package com.example.user.musicexchange;
-import java.util.*;
 
 
 /**
@@ -7,10 +6,10 @@ import java.util.*;
  */
 
 public abstract class Instrument implements Playable, Sellable{
-    Enum<InstrumentStyle> type;
-    String name;
-    int costPrice;
-    int salePrice;
+    private Enum<InstrumentStyle> type;
+    private String name;
+    private int costPrice;
+    private int salePrice;
 
     public Instrument(Enum<InstrumentStyle> type, String name, int costPrice, int salePrice){
         this.type = type;
